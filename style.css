@@ -1,0 +1,108 @@
+:root {
+  background-color: #d8ddeb;
+}
+
+#shimmer {
+  -webkit-animation: shine 3s infinite;
+  animation: shine 3s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+#presents:hover {
+  filter: grayscale(1);
+}
+
+@-webkit-keyframes shine {
+  from {
+    fill: white;
+  }
+  to {
+    fill: #daf0ff;
+  }
+}
+
+@keyframes shine {
+  from {
+    fill: white;
+  }
+  to {
+    fill: #daf0ff;
+  }
+}
+
+#snowglobe-container {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* #ball-23,
+#ball-3,
+#ball-5 {
+  fill: aqua !important;
+}
+ */
+
+#snow path:nth-child(odd),
+#extra-top-snow path:nth-child(even),
+#extra-bottom-snow path:nth-child(odd) {
+  /* animation-name animation-duration animation-iteration-count*/
+  -webkit-animation: snowfall 3s infinite;
+  animation: snowfall 3s infinite;
+}
+
+#snow path:nth-child(even),
+#extra-top-snow path:nth-child(odd),
+#extra-bottom-snow path:nth-child(even) {
+  -webkit-animation: snowfall 4s infinite;
+  animation: snowfall 4s infinite;
+}
+
+@-webkit-keyframes snowfall {
+  0% {
+    -webkit-transform: translateY(-120px);
+    transform: translateY(-120px);
+  }
+
+  50% {
+    opacity: 60%;
+  }
+
+  100% {
+    -webkit-transform: translateY(20px) scale(1.1);
+    transform: translateY(20px) scale(1.1);
+    opacity: 85%;
+  }
+}
+
+@keyframes snowfall {
+  0% {
+    -webkit-transform: translateY(-120px);
+    transform: translatY(-120px);
+  }
+
+  50% {
+    opacity: 60%;
+  }
+
+  100% {
+    -webkit-transform: translateY(20px) scale(1.1);
+    transform: translateY(20px) scale(1.1);
+    opacity: 85%;
+  }
+}
+
+/* turn off the animation for users who have reduce motion turned on*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    -o-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
